@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
 
+import 'package:hypee/features/product/components/secondary_card.dart';
+import 'package:hypee/features/product/components/seller_card.dart';
+
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key});
 
+  final width = 300.0;
+  final height = 500.0;
+
   @override
   Widget build(BuildContext context) {
+    Row productMeta(String label, String value) => Row(
+          children: [
+            Text('$label:', style: Theme.of(context).textTheme.labelSmall),
+            const Spacer(),
+            SecondaryCard(
+              child:
+                  Text(value, style: Theme.of(context).textTheme.labelMedium),
+            ),
+          ],
+        );
+
     return Stack(
       children: <Widget>[
         Padding(
@@ -15,11 +32,10 @@ class ProductCard extends StatelessWidget {
             color: Colors.white,
             child: Container(
               padding: EdgeInsets.zero,
-              height: 550,
-              width: 350,
+              height: height,
+              width: width,
               child: LayoutBuilder(
                 builder: (context, constraints) => Column(
-                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     SizedBox(
@@ -32,33 +48,33 @@ class ProductCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Expanded(
+                    Expanded(
                       child: Padding(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.fromLTRB(10, 10, 10, 18),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            const Text('Nike'),
                             Text(
                               'Nike dunk low sb yuto Horigome',
-                              textAlign: TextAlign.left,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
+                            const Spacer(),
+                            productMeta('Stan', 'Nowy'),
+                            const SizedBox(height: 10),
+                            productMeta('Rozmiar', '38'),
+                            const Spacer(),
                             Text(
-                              'Siemka mam na sell nike dunk low sb w kolaboracji z japońskim skaterem światowej klasy Yuto Horigome Size:38✅ Stan:ds✅',
-                              textAlign: TextAlign.center,
+                              'Dodane przez',
+                              style: Theme.of(context).textTheme.labelSmall,
                             ),
-                            Row(
-                              children: [
-                                Text('Stan:'),
-                                Text('Nowy'),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('Rozmiar:'),
-                                Text('38'),
-                              ],
-                            ),
-                            Text('Dodane przez'),
-                            Text('Kuba Kowalski'),
+                            const SizedBox(height: 5),
+                            const SellerCard(username: 'Jakub Kowalski'),
                           ],
                         ),
                       ),
@@ -69,25 +85,29 @@ class ProductCard extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: 10,
-          right: 10,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(4),
-            ),
-            child: const Text(
-              '950 PLN',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+        priceLabel(),
+      ],
+    );
+  }
+
+  Positioned priceLabel() {
+    return Positioned(
+      bottom: 10,
+      right: 10,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: const Text(
+          '950 PLN',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
-      ],
+      ),
     );
   }
 }
