@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import 'package:hypee/app/router.dart';
+import 'package:hypee/features/app/router.dart';
 
 part 'app_event.dart';
 part 'app_state.dart';

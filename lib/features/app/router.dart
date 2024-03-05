@@ -4,41 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:hypee/features/home/home.screen.dart';
+import 'package:hypee/features/login/login.screen.dart';
 
 class AppRouter {
   AppRouter() {
     _router = GoRouter(
       navigatorKey: _rootNavigatorKey,
       debugLogDiagnostics: kDebugMode,
+      initialLocation: kLogin,
       routes: [
-        GoRoute(
-          path: '/',
-          redirect: (context, state) => kLogin,
-        ),
-        GoRoute(
-          path: kIntroduction,
-        ),
+        // GoRoute(
+        //   path: '/',
+        // ),
         GoRoute(
           path: kLogin,
+          builder: (context, state) => const LoginScreen(),
         ),
-        GoRoute(
-          path: kRegister,
-        ),
-        ShellRoute(
-          navigatorKey: _shellNavigatorKey,
-          builder: (context, state, child) => const HomeScreen(),
-          routes: [
-            GoRoute(
-              path: kDashboard,
-            ),
-            GoRoute(
-              path: kSearch,
-            ),
-            GoRoute(
-              path: kProfile,
-            ),
-          ],
-        ),
+        // ShellRoute(
+        //   navigatorKey: _shellNavigatorKey,
+        //   builder: (context, state, child) => const HomeScreen(),
+        //   routes: const [],
+        // ),
       ],
     );
   }
@@ -53,12 +39,13 @@ class AppRouter {
 
   static const String kIntroduction = '/introduction';
   static const String kLogin = '/login';
-  static const String kRegister = '/register';
 
   static const String kHome = '/home';
 
   // Shell routes
   static const String kDashboard = '/dashboard';
   static const String kSearch = '/search';
+  static const String kSell = '/sell';
+  static const String kInbox = '/inbox';
   static const String kProfile = '/profile';
 }

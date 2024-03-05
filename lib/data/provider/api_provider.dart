@@ -5,9 +5,9 @@ import 'package:flutter/foundation.dart';
 
 import 'package:dio/dio.dart';
 
+import 'package:hypee/config/constants.dart';
 import 'package:hypee/data/provider/authentication_interceptor.dart';
 import 'package:hypee/data/provider/retry_interceptor.dart';
-import 'package:hypee/features/config/constants.dart';
 
 class ApiProvider {
   ApiProvider._(this._dio);
