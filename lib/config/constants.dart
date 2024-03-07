@@ -8,6 +8,7 @@ class Constants {
   static const baseUrl = '';
 
   static ThemeData get appTheme => ThemeData(
+        colorSchemeSeed: const Color(0xffc6a66e),
         textTheme: GoogleFonts.montserratTextTheme(),
       );
 }
