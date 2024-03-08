@@ -3,33 +3,47 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:hypee/features/authentication/authentication.screen.dart';
+import 'package:hypee/features/authentication/views/introduction.view.dart';
+import 'package:hypee/features/authentication/views/login.view.dart';
+import 'package:hypee/features/authentication/views/register.view.dart';
 import 'package:hypee/features/dashboard/dashboard.screen.dart';
 import 'package:hypee/features/home/home.screen.dart';
-import 'package:hypee/features/login/login.screen.dart';
-import 'package:hypee/features/login/register.screen.dart';
 
 class AppRouter {
   AppRouter() {
     _router = GoRouter(
       navigatorKey: _rootNavigatorKey,
       debugLogDiagnostics: kDebugMode,
-      initialLocation: kLogin,
+      initialLocation: kIntroduction,
       routes: [
         // GoRoute(
         //   path: '/',
         // ),
-        GoRoute(
-          path: kLogin,
-          builder: (context, state) => const LoginScreen(),
+
+        ShellRoute(
+          builder: (context, state, child) => AuthenticationScreen(
+            child: child,
+          ),
           routes: [
             GoRoute(
-              path: 'register',
-              builder: (context, state) => const RegisterScreen(),
+              path: kIntroduction,
+              builder: (context, state) => const IntroductionView(),
+              routes: [
+                GoRoute(
+                  path: 'login',
+                  builder: (context, state) => const LoginView(),
+                ),
+                GoRoute(
+                  path: 'register',
+                  builder: (context, state) => const RegisterView(),
+                ),
+              ],
             ),
           ],
         ),
         ShellRoute(
-          navigatorKey: shellNavigatorKey,
+          navigatorKey: homeNavigatorKey,
           builder: (context, state, child) => const HomeScreen(),
           routes: [
             GoRoute(
@@ -48,17 +62,15 @@ class AppRouter {
   final GlobalKey<NavigatorState> _rootNavigatorKey =
       GlobalKey<NavigatorState>(debugLabel: 'root');
 
-  final GlobalKey<NavigatorState> shellNavigatorKey =
-      GlobalKey<NavigatorState>(debugLabel: 'shell');
+  final GlobalKey<NavigatorState> homeNavigatorKey =
+      GlobalKey<NavigatorState>(debugLabel: 'home');
 
+  // Authentication routes
   static const String kIntroduction = '/introduction';
-
   static const String kLogin = '/login';
-  static const String kRegister = '/login/register';
+  static const String kRegister = '/register';
 
-  // static const String kHome = '/home';
-
-  // Shell routes
+  // Home shell routes
   static const String kDashboard = '/dashboard';
   static const String kSearch = '/search';
   static const String kSell = '/sell';
