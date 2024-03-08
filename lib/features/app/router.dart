@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:hypee/features/dashboard/dashboard.screen.dart';
+import 'package:hypee/features/home/home.screen.dart';
 import 'package:hypee/features/login/login.screen.dart';
 import 'package:hypee/features/login/register.screen.dart';
 
@@ -26,11 +28,16 @@ class AppRouter {
             ),
           ],
         ),
-        // ShellRoute(
-        //   navigatorKey: _shellNavigatorKey,
-        //   builder: (context, state, child) => const HomeScreen(),
-        //   routes: const [],
-        // ),
+        ShellRoute(
+          navigatorKey: shellNavigatorKey,
+          builder: (context, state, child) => const HomeScreen(),
+          routes: [
+            GoRoute(
+              path: kDashboard,
+              builder: (context, state) => const DashboardView(),
+            ),
+          ],
+        ),
       ],
     );
   }
@@ -41,14 +48,15 @@ class AppRouter {
   final GlobalKey<NavigatorState> _rootNavigatorKey =
       GlobalKey<NavigatorState>(debugLabel: 'root');
 
-  final GlobalKey<NavigatorState> _shellNavigatorKey =
+  final GlobalKey<NavigatorState> shellNavigatorKey =
       GlobalKey<NavigatorState>(debugLabel: 'shell');
 
   static const String kIntroduction = '/introduction';
+
   static const String kLogin = '/login';
   static const String kRegister = '/login/register';
 
-  static const String kHome = '/home';
+  // static const String kHome = '/home';
 
   // Shell routes
   static const String kDashboard = '/dashboard';

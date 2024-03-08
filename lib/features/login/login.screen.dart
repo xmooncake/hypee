@@ -107,7 +107,7 @@ class _LoginView extends StatelessWidget {
             ),
             TextButton(
               // TODO: Use AppBloc instead
-              onPressed: () => context.go(AppRouter.kHome),
+              onPressed: () => context.go(AppRouter.kDashboard),
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
