@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'package:hypee/features/home/components/nav_bar.dart';
 import 'package:hypee/features/home/cubit/home_cubit.dart';
