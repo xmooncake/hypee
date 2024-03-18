@@ -6,7 +6,9 @@
 
 <div align="center">
 🚧 **Work in Progress** 🚧
-<br>
+
+<br><br>
+
 This project is currently under developement. Expect more detailed documentation soon! Feel free to contribute or share your feedback to help us improve.
 </div>
 
