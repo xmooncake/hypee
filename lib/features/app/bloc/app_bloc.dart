@@ -1,6 +1,7 @@
+import 'dart:ffi';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-
 import 'package:hypee/features/app/router.dart';
 
 part 'app_event.dart';
@@ -12,6 +13,4 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       // TODO: implement event handler
     });
   }
-
-  final router = AppRouter().router;
 }
