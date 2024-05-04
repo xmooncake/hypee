@@ -1,10 +1,14 @@
 part of 'app_bloc.dart';
 
-sealed class AppState extends Equatable {
-  const AppState();
+class AppState extends Equatable {
+  const AppState({
+    this.isAuthenticated = false,
+  });
+
+  final bool isAuthenticated;
+
   
   @override
-  List<Object> get props => [];
-}
+  List<Object> get props => [isAuthenticated];
 
-final class AppInitial extends AppState {}
+}

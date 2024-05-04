@@ -8,7 +8,12 @@ class AppDependencies {
   static void register() {
     final getIt = GetIt.instance;
 
-    getIt.registerSingleton<AppBloc>(AppBloc());
-    getIt.registerSingleton<AppRouter>(AppRouter());
+    if (!getIt.isRegistered<AppBloc>()) {
+      getIt.registerSingleton<AppBloc>(AppBloc());
+    }
+
+    if (!getIt.isRegistered<AppRouter>()) {
+      getIt.registerSingleton<AppRouter>(AppRouter());
+    }
   }
 }

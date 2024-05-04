@@ -11,16 +11,18 @@ import 'package:hypee/features/dashboard/dashboard.screen.dart';
 import 'package:hypee/features/home/home.screen.dart';
 
 class AppRouter {
-  AppRouter() {
+  AppRouter({
+    String initialLocation = kIntroduction,
+  }) {
     _router = GoRouter(
       navigatorKey: _rootNavigatorKey,
       debugLogDiagnostics: kDebugMode,
       initialLocation: kIntroduction,
       routes: [
-        // GoRoute(
-        //   path: '/',
-        // ),
-
+        GoRoute(
+          path: '/',
+          redirect: (context, state) => initialLocation,
+        ),
         ShellRoute(
           builder: (context, state, child) => AuthenticationScreen(
             child: child,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:hypee/features/authentication/components/authentication_outlined_button.dart';
 
@@ -30,11 +31,11 @@ class IntroductionView extends StatelessWidget {
         ),
         const Spacer(),
         AuthenticationOutlinedButton(
-          onPressed: () {},
+          onPressed: () => context.go('/introduction/login'),
           label: 'Zaloguj się',
         ),
         OutlinedButton.icon(
-          onPressed: () {},
+          onPressed: null,
           icon: SvgPicture.asset(
             'assets/icons/google.svg',
             width: 20,
@@ -45,7 +46,7 @@ class IntroductionView extends StatelessWidget {
           ),
         ),
         OutlinedButton.icon(
-          onPressed: () {},
+          onPressed: null,
           icon: SvgPicture.asset(
             'assets/icons/apple.svg',
             width: 20,
@@ -60,12 +61,7 @@ class IntroductionView extends StatelessWidget {
             TextButton(onPressed: () {}, child: const Text('Zarejestruj się')),
           ],
         ),
-        const Spacer(),
-        TextButton.icon(
-          onPressed: () {},
-          icon: const Text('Kontynuuj bez logowania'),
-          label: const Icon(Icons.arrow_forward_ios),
-        ),
+        Spacer()
       ],
     );
   }

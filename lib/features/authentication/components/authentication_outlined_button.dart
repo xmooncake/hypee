@@ -14,17 +14,19 @@ class AuthenticationOutlinedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final label = Text(this.label, style: const TextStyle(color: Colors.black));
+
     if (icon != null) {
       return OutlinedButton.icon(
         onPressed: onPressed,
         icon: Icon(icon),
-        label: Text(label),
+        label: label,
       );
     }
 
     return OutlinedButton(
       onPressed: onPressed,
-      child: Text(label),
+      child: label,
     );
   }
 }

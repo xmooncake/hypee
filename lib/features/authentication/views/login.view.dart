@@ -5,8 +5,27 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Login'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Zaloguj się'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Email',
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Hasło',
+              ),
+            ),
+            ElevatedButton(onPressed: () {}, child: const Text('Zaloguj się')),
+          ],
+        ),
+      ),
     );
   }
 }
