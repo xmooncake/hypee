@@ -16,11 +16,8 @@ class HomeScreen extends StatelessWidget {
       create: (context) => HomeCubit(),
       child: Scaffold(
         bottomNavigationBar: const NavBar(),
-        body: SafeArea(
-          child: BlocBuilder<HomeCubit, int>(
-            builder: (context, state) =>
-                context.read<HomeCubit>().screens[state],
-          ),
+        body: BlocBuilder<HomeCubit, int>(
+          builder: (context, state) => context.read<HomeCubit>().screens[state],
         ),
       ),
     );
