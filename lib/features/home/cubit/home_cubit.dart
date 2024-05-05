@@ -4,6 +4,7 @@ import 'package:hypee/features/dashboard/dashboard.screen.dart';
 import 'package:hypee/features/messages/messages.view.dart';
 import 'package:hypee/features/profile/profile.view.dart';
 import 'package:hypee/features/search/search.view.dart';
+import 'package:hypee/features/sell/sell.view.dart';
 
 class HomeCubit extends Cubit<int> {
   HomeCubit() : super(0);
@@ -11,6 +12,7 @@ class HomeCubit extends Cubit<int> {
   final screens = [
     const DashboardView(),
     const SearchView(),
+    const SellView(),
     const MessagesView(),
     const ProfileView(),
   ];

@@ -6,7 +6,9 @@ import 'package:hypee/features/home/components/nav_bar.dart';
 import 'package:hypee/features/home/cubit/home_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +18,8 @@ class HomeScreen extends StatelessWidget {
         bottomNavigationBar: const NavBar(),
         body: SafeArea(
           child: BlocBuilder<HomeCubit, int>(
-            builder: (context, state) {
-              return context.read<HomeCubit>().screens[state];
-            },
+            builder: (context, state) =>
+                context.read<HomeCubit>().screens[state],
           ),
         ),
       ),

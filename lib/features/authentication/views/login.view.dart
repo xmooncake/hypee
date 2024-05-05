@@ -12,12 +12,12 @@ class LoginView extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Email',
               ),
             ),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Hasło',
               ),

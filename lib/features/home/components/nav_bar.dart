@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'package:hypee/features/home/cubit/home_cubit.dart';
+import 'package:icons_plus/icons_plus.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({
     super.key,
   });
+
+  SalomonBottomBarItem _barItem(
+    String title,
+    IconData iconData, {
+    bool showBadge = false,
+  }) =>
+      SalomonBottomBarItem(
+        icon: Badge(
+          label: const Text('3'),
+          isLabelVisible: showBadge,
+          child: Icon(iconData),
+        ),
+        title: Text(title),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -25,42 +40,21 @@ class NavBar extends StatelessWidget {
             ],
           ),
           child: SafeArea(
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-              child: GNav(
-                onTabChange: (index) =>
-                    context.read<HomeCubit>().onTabChange(index),
-                selectedIndex: state,
-                rippleColor: Colors.grey[300]!,
-                hoverColor: Colors.grey[100]!,
-                gap: 8,
-                activeColor: Colors.black,
-                iconSize: 24,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                duration: const Duration(milliseconds: 400),
-                tabBackgroundColor: Colors.grey[100]!,
-                color: Colors.black,
-                tabs: const [
-                  GButton(
-                    icon: Icons.home,
-                    text: 'Home',
-                  ),
-                  GButton(
-                    icon: Icons.search,
-                    text: 'Search',
-                  ),
-                  GButton(
-                    icon: Icons.message,
-                    text: 'Messages',
-                  ),
-                  GButton(
-                    icon: Icons.person,
-                    text: 'Profile',
-                  ),
-                ],
-              ),
+            child: SalomonBottomBar(
+              currentIndex: state,
+              onTap: (index) => context.read<HomeCubit>().onTabChange(index),
+              items: [
+                _barItem('Nowości', HeroIcons.home),
+                _barItem('Szukaj', HeroIcons.magnifying_glass),
+                _barItem('Sprzedaj', HeroIcons.plus_circle),
+                _barItem(
+                  'Wiadomości',
+                  HeroIcons.chat_bubble_left,
+                  showBadge: true,
+                ),
+                _barItem('Profil', HeroIcons.cog_6_tooth),
+              ],
+              // currentIndex: key.currentState. ,
             ),
           ),
         );
