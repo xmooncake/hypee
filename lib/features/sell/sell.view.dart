@@ -22,14 +22,17 @@ class SellView extends StatelessWidget {
           const SizedBox(height: 20),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 children: [
                   const Text(
-                    'Niestety ale dalej pracujemy nad tą funkcjonalnością',
+                    'Niestety ale dalej pracujemy nad tą funkcjonalnością.',
+                    textAlign: TextAlign.center,
                   ),
+                  const SizedBox(height: 10),
                   const Text(
-                    'Przejdź do panelu webowego aby wystawić przedmioty',
+                    'Przejdź do panelu web aby wystawić przedmioty:',
+                    textAlign: TextAlign.center,
                   ),
                   TextButton(
                     style: TextButton.styleFrom(
