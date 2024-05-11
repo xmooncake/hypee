@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:hypee/features/product/components/secondary_card.dart';
 import 'package:hypee/features/product/components/seller_card.dart';
@@ -100,11 +101,14 @@ class ProductCard extends StatelessWidget {
           color: Colors.black,
           borderRadius: BorderRadius.circular(8),
         ),
-        child: const Text(
+        child: Text(
           '950 PLN',
           style: TextStyle(
+            fontSize: 16,
             color: Colors.white,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 2,
+            fontFamily: GoogleFonts.montserrat().fontFamily,
           ),
         ),
       ),

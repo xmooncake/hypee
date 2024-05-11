@@ -12,17 +12,6 @@ class DashboardView extends StatelessWidget {
       child: Center(
         child: ListView(
           children: [
-            SizedBox(
-              height: size.height * 0.15,
-              width: size.width,
-              child: Card(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: Image.asset(
-                  'assets/images/mock-ad.jpg',
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
             const Expanded(
               child: Row(
                 children: [
