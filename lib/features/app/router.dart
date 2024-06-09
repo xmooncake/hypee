@@ -7,7 +7,7 @@ import 'package:hypee/features/authentication/authentication.screen.dart';
 import 'package:hypee/features/authentication/views/introduction.view.dart';
 import 'package:hypee/features/authentication/views/login.view.dart';
 import 'package:hypee/features/authentication/views/register.view.dart';
-import 'package:hypee/features/dashboard/dashboard.screen.dart';
+import 'package:hypee/features/dashboard/dashboard.view.dart';
 import 'package:hypee/features/home/home.screen.dart';
 
 class AppRouter {

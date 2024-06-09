@@ -1,3 +1,7 @@
 {
-    "@@locale": "pl"
-  }
+  "@@locale": "pl",
+  "label_navbar_home": "Nowości",
+  "label_navbar_messages": "Wiadomości",
+  "label_navbar_options": "Opcje",
+  "label_navbar_search": "Szukaj"
+}

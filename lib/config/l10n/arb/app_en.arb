@@ -1,4 +1,7 @@
 {
-    "@@locale": "en"
-    
-  }
+  "@@locale": "en",
+  "label_navbar_home": "Home",
+  "label_navbar_messages": "Messages",
+  "label_navbar_options": "Options",
+  "label_navbar_search": "Search"
+}

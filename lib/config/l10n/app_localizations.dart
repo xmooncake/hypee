@@ -90,6 +90,29 @@ abstract class AppLocalizations {
 
   ];
 
+  /// No description provided for @label_navbar_home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get label_navbar_home;
+
+  /// No description provided for @label_navbar_messages.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get label_navbar_messages;
+
+  /// No description provided for @label_navbar_options.
+  ///
+  /// In en, this message translates to:
+  /// **'Options'**
+  String get label_navbar_options;
+
+  /// No description provided for @label_navbar_search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get label_navbar_search;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
