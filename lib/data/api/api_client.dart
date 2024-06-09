@@ -5,18 +5,15 @@ import 'package:flutter/foundation.dart';
 
 import 'package:dio/dio.dart';
 
-import 'package:hypee/config/constants.dart';
-import 'package:hypee/data/provider/authentication_interceptor.dart';
-import 'package:hypee/data/provider/retry_interceptor.dart';
+import 'package:hypee/data/api/authentication_interceptor.dart';
+import 'package:hypee/data/api/retry_interceptor.dart';
 
-class ApiProvider {
-  ApiProvider._(this._dio);
+class ApiClient {
+  ApiClient._(this._dio);
 
   final Dio _dio;
 
-  static Future<ApiProvider> initialize() async {
-    const baseUrl = Constants.baseUrl;
-
+  static Future<ApiClient> initialize() async {
     final dio = Dio(
       BaseOptions(
 
@@ -31,7 +28,7 @@ class ApiProvider {
       RetryInterceptor(dio: dio),
     ]);
 
-    return ApiProvider._(dio);
+    return ApiClient._(dio);
   }
 
   static Map<String, dynamic> _parseAndDecode(String response) {

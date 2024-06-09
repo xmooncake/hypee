@@ -61,7 +61,7 @@ class IntroductionView extends StatelessWidget {
             TextButton(onPressed: () {}, child: const Text('Zarejestruj się')),
           ],
         ),
-        Spacer()
+        const Spacer(),
       ],
     );
   }
