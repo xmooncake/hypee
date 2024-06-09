@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hypee/config/l10n/l10n.dart';
 
 import 'package:hypee/features/home/cubit/home_cubit.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -44,15 +45,27 @@ class NavBar extends StatelessWidget {
               currentIndex: state,
               onTap: (index) => context.read<HomeCubit>().onTabChange(index),
               items: [
-                _barItem('Nowości', HeroIcons.home),
-                _barItem('Szukaj', HeroIcons.magnifying_glass),
-                _barItem('Sprzedaj', HeroIcons.plus_circle),
                 _barItem(
-                  'Wiadomości',
+                  context.l10n.labelNavbarHome,
+                  HeroIcons.home,
+                ),
+                _barItem(
+                  context.l10n.labelNavbarSearch,
+                  HeroIcons.magnifying_glass,
+                ),
+                _barItem(
+                  context.l10n.labelNavbarSell,
+                  HeroIcons.plus_circle,
+                ),
+                _barItem(
+                  context.l10n.labelNavbarMessages,
                   HeroIcons.chat_bubble_left,
                   showBadge: true,
                 ),
-                _barItem('Opcje', HeroIcons.ellipsis_horizontal),
+                _barItem(
+                  context.l10n.labelNavbarOptions,
+                  HeroIcons.ellipsis_horizontal,
+                ),
               ],
               // currentIndex: key.currentState. ,
             ),

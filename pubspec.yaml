@@ -29,7 +29,6 @@ dependencies:
 dev_dependencies:
   bloc_test: ^9.1.7
   build_runner: ^2.4.11
-  flutter_gen: ^5.5.0+1
   flutter_test:
     sdk: flutter
   lint: ^2.1.2
@@ -37,13 +36,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/brand/
     - assets/images/
     - assets/icons/
     - assets/lottie/
-
-flutter_gen:
-  integrations:
-    lottie: true
