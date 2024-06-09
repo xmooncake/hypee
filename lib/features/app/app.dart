@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:get_it/get_it.dart';
 
@@ -14,6 +15,14 @@ class App extends StatelessWidget {
     AppDependencies.register();
 
     return MaterialApp.router(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('pl', 'PL'),
+      ],
       theme: Constants.appTheme,
       routerConfig: GetIt.I<AppRouter>().router,
     );

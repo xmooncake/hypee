@@ -21,13 +21,15 @@ dependencies:
   google_fonts: ^6.2.0
   google_nav_bar: ^5.0.6
   icons_plus: ^5.0.0
-  intl: ^0.19.0
+  intl: any
   lottie: ^3.1.0
   salomon_bottom_bar: ^3.3.2
   url_launcher: ^6.2.6
 
 dev_dependencies:
   bloc_test: ^9.1.7
+  build_runner: ^2.4.11
+  flutter_gen: ^5.5.0+1
   flutter_test:
     sdk: flutter
   lint: ^2.1.2
@@ -35,10 +37,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  generate: true
 
   assets:
     - assets/brand/
     - assets/images/
     - assets/icons/
     - assets/lottie/
+
+flutter_gen:
+  integrations:
+    lottie: true
