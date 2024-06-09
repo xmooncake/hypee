@@ -52,7 +52,7 @@ class NavBar extends StatelessWidget {
                   HeroIcons.chat_bubble_left,
                   showBadge: true,
                 ),
-                _barItem('Profil', HeroIcons.cog_6_tooth),
+                _barItem('Opcje', HeroIcons.ellipsis_horizontal),
               ],
               // currentIndex: key.currentState. ,
             ),

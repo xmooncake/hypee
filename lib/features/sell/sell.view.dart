@@ -26,12 +26,17 @@ class SellView extends StatelessWidget {
               child: Column(
                 children: [
                   const Text(
-                    'Niestety ale dalej pracujemy nad tą funkcjonalnością.',
-                    textAlign: TextAlign.center,
+                    'Niestety ale programista pracujący nad tą aplikacją zdążył uciec z piwnicy przed skończeniem tej funkcjonalności..',
+                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'Przejdź do panelu web aby wystawić przedmioty:',
+                    'Postaramy się jak najszybciej rozwiązać ten problem.',
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 15),
+                  const Text(
+                    'Swoje przedmioty możesz wystawić na stronie:',
                     textAlign: TextAlign.center,
                   ),
                   TextButton(
