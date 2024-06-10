@@ -1,5 +1,6 @@
 {
   "@@locale": "en",
+  "fullLanguage": "English",
   "labelNavbarHome": "Home",
   "labelNavbarMessages": "Messages",
   "labelNavbarOptions": "Options",
