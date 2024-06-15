@@ -1,9 +1,10 @@
 {
   "@@locale": "en",
-  "fullLanguage": "English",
-  "labelNavbarHome": "Home",
-  "labelNavbarMessages": "Messages",
-  "labelNavbarOptions": "Options",
-  "labelNavbarSearch": "Search",
-  "labelNavbarSell": "Sell"
+  "fullLanguage": "Polski",
+  
+  "labelNavbarHome": "Nowości",
+  "labelNavbarMessages": "Wiadomości",
+  "labelNavbarOptions": "Opcje",
+  "labelNavbarSearch": "Szukaj",
+  "labelNavbarSell": "Sprzedaj"
 }

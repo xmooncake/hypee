@@ -1,6 +1,7 @@
 {
   "@@locale": "pl",
   "fullLanguage": "Polski",
+  
   "labelNavbarHome": "Nowości",
   "labelNavbarMessages": "Wiadomości",
   "labelNavbarOptions": "Opcje",
